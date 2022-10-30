@@ -57,8 +57,6 @@
                 app:percentY="0.6"
                 />
 
-            <!-- TODO: Add two more KeyPositions to the KeyFrameSet here -->
-
         </KeyFrameSet>
     </Transition>
 
