@@ -17,6 +17,8 @@ package com.google.samples.motionlayoutcodelab
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.motion.widget.MotionLayout
+import com.google.android.material.appbar.AppBarLayout
 
 class Step8Activity : AppCompatActivity() {
 
@@ -27,8 +29,31 @@ class Step8Activity : AppCompatActivity() {
         coordinateMotion()
     }
 
+    // Set progress of MotionLayout based on an AppBarLayout.OnOffsetChangedListener
     private fun coordinateMotion() {
-        // TODO: set progress of MotionLayout based on an AppBarLayout.OnOffsetChangedListener
+
+        // References
+
+        // It needs to Scroll
+        val appBarLayout: AppBarLayout = findViewById(R.id.appbar_layout)
+
+        // It needs to play the animation
+        val motionLayout: MotionLayout = findViewById(R.id.motion_layout)
+
+        // It will be called by the AppBar whenever offset changes or user scrolls.
+        // Listener: Trigger whenever the vertical offset changes or user scrolls
+        val listener = AppBarLayout.OnOffsetChangedListener { unused, verticalOffset ->
+
+            //
+            val seekPosition = -verticalOffset / appBarLayout.totalScrollRange.toFloat()
+
+            // Initialize the animation
+            motionLayout.progress = seekPosition
+
+        }
+
+        //
+        appBarLayout.addOnOffsetChangedListener(listener)
 
     }
 }
