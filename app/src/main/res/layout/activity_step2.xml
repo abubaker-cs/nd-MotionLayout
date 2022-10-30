@@ -20,6 +20,7 @@
     app:layoutDescription="@xml/step2"
     >
 
+    <!-- Image: Background -->
     <ImageView
         android:id="@+id/background"
         android:layout_width="0dp"
@@ -33,7 +34,7 @@
         app:srcCompat="@drawable/background"
         />
 
-
+    <!-- Image: Left Star -->
     <ImageView
         android:id="@+id/left_star"
         android:layout_width="wrap_content"
@@ -43,6 +44,7 @@
         app:srcCompat="@drawable/ic_star_outline"
         />
 
+    <!-- Image: Right Star -->
     <ImageView
         android:id="@+id/right_star"
         android:layout_width="wrap_content"
@@ -52,6 +54,7 @@
         app:srcCompat="@drawable/ic_star_outline"
         />
 
+    <!-- Image: Red Star -->
     <ImageView
         android:id="@+id/red_star"
         android:layout_width="wrap_content"
@@ -61,6 +64,7 @@
         app:srcCompat="@drawable/ic_star_outline"
         />
 
+    <!-- Image: Credits -->
     <TextView
         android:id="@+id/credits"
         android:layout_width="wrap_content"
@@ -72,4 +76,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
 </androidx.constraintlayout.motion.widget.MotionLayout>
